@@ -60,9 +60,10 @@ def gettldrs():
                 'text': match.group(1),
                 'id': s.id
             }
-            if not (
+            if not ( #replace with regex eventually?
                 tldr["text"].startswith("at the end") or
-                tldr["text"].startswith("at the bottom")
+                tldr["text"].startswith("at the bottom") or
+                tldr["text"] == "at bottom"
             ):
                 tldrs.append(tldr)
     return tldrs
